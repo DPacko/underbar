@@ -4,6 +4,7 @@
   describe('Part I', function() {
 
     describe('identity', function() {
+
       checkForNativeMethods(function() {
         _.identity(1);
       });
@@ -345,8 +346,9 @@
       it('should handle iterators that work with a sorted array', function() {
         var iterator = function(value) { return value === 1; };
         var numbers = [1, 2, 2, 3, 4, 4];
+        var isSorted = true;
 
-        expect(_.uniq(FILL_ME_IN)).to.eql([1, 2]);
+        expect(_.uniq(numbers, isSorted, iterator)).to.eql([1, 2]);
       });
 
       it('should produce a brand new array instead of modifying the input array', function() {
